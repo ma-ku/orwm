@@ -25,6 +25,10 @@ services:
 
     osm-bright:
       image: vincentds1/osm-bright
+      environment:
+        - PG_PORT_5432_TCP_PORT=5432
+        - PG_ENV_OSM_DB=gis
+        - PG_ENV_OSM_USER=osm
       volumes_from:
         - start-data
         - shapefiles
